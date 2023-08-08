@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  border: 0px solid rgb(201, 201, 201);
+  padding: 0px;
+  outline: 0px solid green;
+  color: rgb(216, 216, 216);
+  background-color: rgb(51, 51, 51);
+  margin: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 5vmin;
+  table-layout: fixed;
+  vertical-align: middle;
+  /* text-indent: 0; */
+}
+
+table {
+  height: 90vmin;
+  width: 90vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: block; */
+}
+
+td {
+  /* height: 5vmin;
+  width: 5vmin; */
+  text-align: center;
+
+  /* border: 1px solid rgb(201, 201, 201); */
+}
+
+td:hover {
+  color: white;
+  /* background-color: red; */
+  /* border: 1px solid black; */
+}
+
+canvas {
+  height: 80%;
+  width: 80%;
+  background-color: transparent;
+}

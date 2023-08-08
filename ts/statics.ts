@@ -1,0 +1,59 @@
+export type Board = number[][];
+export type Pos = [ number, number ];
+
+export const size = 8;
+
+export const white = 1;
+export const black = -1;
+
+export const noFig = 0;
+
+export type Color = { code: number; name: string; };
+
+export const orange: Color = { code: 1, name: "orange" };
+export const blue: Color = { code: 2, name: "blue" };
+export const purple: Color = { code: 3, name: "purple" };
+export const pink: Color = { code: 4, name: "pink" };
+export const yellow: Color = { code: 5, name: "yellow" };
+export const red: Color = { code: 6, name: "red" };
+export const green: Color = { code: 7, name: "green" };
+export const brown: Color = { code: 8, name: "brown" };
+
+export const noPos: Pos = [ -1, -1 ];
+
+export const markFactor = 10;
+
+export type Colors = Color[][];
+
+export const colors: Colors = [
+  [ orange, blue, purple, pink, yellow, red, green, brown ],
+  [ red, orange, pink, green, blue, yellow, brown, purple ],
+  [ green, pink, orange, red, purple, brown, yellow, blue ],
+  [ pink, purple, blue, orange, brown, green, red, yellow ],
+  [ yellow, red, green, brown, orange, blue, purple, pink ],
+  [ blue, yellow, brown, purple, red, orange, pink, green ],
+  [ purple, brown, yellow, blue, green, pink, orange, red ],
+  [ brown, green, red, yellow, pink, purple, blue, orange ],
+];
+
+export function getFigColorName ( fig: number ): string {
+
+  let fig2 = Math.abs( fig );
+
+  if ( fig2 > size )
+    fig2 /= markFactor;
+
+  // console.log( "fig2: " + fig2 );
+
+  for ( let y = 0; y < size; y++ ) {
+
+    const col = colors[ 0 ][ y ];
+
+    if ( fig2 == col.code )
+      return col.name;
+
+  }
+
+  throw new Error( "cannot find color name of fig" );
+
+}
